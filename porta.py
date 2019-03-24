@@ -1,13 +1,13 @@
 from random import randint
+import matplotlib.pyplot as plt
 
-n = int(input("Número de vezes para repetir o experimento:"))
+n = int(input("Número de vezes para repetir o experimento: "))
 
-#na posição 0, o número de viorias
-#na posição 1, o número de perdas
-trocou = [0, 0]
-n_trocou = [0, 0]
+#vetores com a frequência acumulada de vitórias
+trocou = [0]
+n_trocou = [0]
 
-for i in range(n):
+for i in range(1, n):
     #colocamos o premio
     premio = randint(0,2)
 
@@ -41,23 +41,27 @@ for i in range(n):
 
         #verificamos se ele ganhou
         if escolhido == premio:
-            trocou[0] += 1
+            trocou.append(((trocou[-1] * (len(trocou)-1)) + 1)/len(trocou))
         else:
-            trocou[1] += 1
+            trocou.append((trocou[-1] * (len(trocou)-1))/len(trocou))
 
     #caso ele não tenha trocado de porta, verificamos se ele ganhou
     else:
         if escolhido == premio:
-            n_trocou[0] += 1
+            n_trocou.append(((n_trocou[-1] * (len(n_trocou)-1)) + 1)/len(n_trocou))
         else:
-            n_trocou[1] += 1
+            n_trocou.append((n_trocou[-1] * (len(n_trocou)-1))/len(n_trocou))
 
 #impressão dos resultados
-#(a ser trocado pelo plot dos gŕaficos)
-print("Depois de repetir", n, "obtivemos:")
-print("Trocando:")
-print("---Ganhou:", trocou[0], "=", trocou[0] / n)
-print("---Perdeu:", trocou[1], "=", trocou[1] / n)
-print("Não Trocando:")
-print("---Ganhou:", n_trocou[0], "=", n_trocou[0] / n)
-print("---Perdeu:", n_trocou[1], "=", n_trocou[1] / n)
+print("Depois de repetir", str(n) + ",obtivemos:")
+plt.plot(trocou)
+plt.xlabel('repetições')
+plt.ylabel('freq. acumulada')
+plt.title("Vitórias trocando")
+plt.show()
+#gráfico 2
+plt.plot(n_trocou)
+plt.xlabel('repetições')
+plt.ylabel('freq. acumulada')
+plt.title("Vitórias não trocando")
+plt.show()

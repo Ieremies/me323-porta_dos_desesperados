@@ -15,4 +15,5 @@ Logo, para que realizemos a tarefa de ME323, gastamos muito mais tempo em assunt
 Enfim, se realmente os 90% do esforço com Git/GitHub, Jupyter Notebook e plotagem de gráfico eram o objetivo principal da tarefa, solicitamos encarecidamente ajuda com esses assuntos, pois acreditamos que não atingimos tais objetivos em sua plenitude. Podemos marcar um dia para tirarmos as dúvidas? Agora, se o objetivo principal da tarefa era realmente exercitar os assuntos de Probabilidade, creio que seja importante dizermos que isso foi completamente ofuscado pela dificuldade que tivemos com outros pontos da tarefa.
 
 Obrigada pela atenção,
+
 Ieremies Vieira (ra217938) e Camila Porfírio (ra195334)
